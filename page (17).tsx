@@ -1,16 +1,2 @@
-export default function Page() {
-  const cards = ['Training due', 'Competency reviews', 'NQP/preceptorship', 'Certificates'];
-  return (
-    <section className="content">
-      <h1 className="page-title">Training & Competency</h1>
-      <p className="muted">Training records, competency passports, preceptorship and compliance.</p>
-      <div className="grid grid-4" style={{marginTop:22}}>
-        {cards.map((card) => <div className="card" key={card}><div className="muted">{card}</div><div className="metric">—</div><span className="badge green">Module ready</span></div>)}
-      </div>
-      <div className="card" style={{marginTop:16}}>
-        <div className="card-title">Operational work queue</div>
-        <table className="table"><thead><tr><th>Area</th><th>Status</th><th>Next step</th></tr></thead><tbody><tr><td>Training due</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Competency reviews</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>NQP/preceptorship</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Certificates</td><td><span className="badge green">Active</span></td><td>Review required</td></tr></tbody></table>
-      </div>
-    </section>
-  );
-}
+import { redirect } from "next/navigation";
+export default function Home(){redirect("/dashboard")}
