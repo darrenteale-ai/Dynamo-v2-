@@ -1,6 +1,3 @@
-[README.md](https://github.com/user-attachments/files/32346936/README.md)
-# Dynamo-v2-
-Rota System
 # DYNAMO — MES Operational Management Platform
 
 This repository is the first executable foundation of DYNAMO for Medical Emergency Solutions.
