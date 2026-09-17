@@ -1,1 +1,10 @@
-:root{--blue:#005eb8;--dark:#003b75;--green:#00a651;--red:#d62828;--amber:#f59e0b;--border:#dbe3ec;--text:#172033;--muted:#64748b}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#f8fafc}a{color:inherit;text-decoration:none}.app-shell{display:flex;min-height:100vh}.sidebar{width:250px;background:var(--dark);color:#fff;padding:20px 14px}.brand{font-weight:800;font-size:22px;padding:8px 10px 24px}.brand small{display:block;font-size:11px;opacity:.7;margin-top:4px}.nav-section{margin:18px 8px 8px;text-transform:uppercase;font-size:10px;opacity:.55;letter-spacing:.08em}.nav-item{display:block;padding:10px 12px;border-radius:7px;margin:2px 0;font-size:14px}.nav-item:hover{background:rgba(255,255,255,.1)}.main{flex:1;min-width:0}.topbar{height:64px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 28px}.content{padding:28px;max-width:1500px;margin:auto}.page-title{font-size:28px;margin:0 0 6px}.muted{color:var(--muted)}.grid{display:grid;gap:16px}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px;box-shadow:0 1px 2px rgba(0,0,0,.03)}.card-title{font-weight:700;margin-bottom:14px}.metric{font-size:30px;font-weight:800;margin:4px 0 8px}.badge{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700;background:#e2e8f0}.green{background:#dcfce7;color:#166534}.amber{background:#fef3c7;color:#92400e}.red{background:#fee2e2;color:#991b1b}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--border);font-size:13px}.table th{color:var(--muted);font-size:11px;text-transform:uppercase}@media(max-width:900px){.sidebar{display:none}.grid-4,.grid-2{grid-template-columns:1fr}.content{padding:18px}.topbar{padding:0 18px}}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+}

@@ -1,7 +1,12 @@
-# DYNAMO Build 4 — Connected Data Layer
+# DYNAMO Next.js Fix Pack
 
-Adds the first live Supabase data-access endpoints and completes policy/version/acknowledgement schema.
+This fixes the "Couldn't find any pages or app directory" error.
 
-Apply `database/migrations/002_workflows.sql` after the previous DYNAMO migrations. Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in `.env.local`.
+Copy these files into the root of your DYNAMO project, then run:
 
-Do not expose a Supabase service-role key to browser code. Before live MES data is imported, complete security testing, RLS review, data-protection review, retention configuration, backups and recovery testing.
+npm install
+npm run dev
+
+Finally test:
+
+npm run build
