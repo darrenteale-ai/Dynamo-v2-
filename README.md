@@ -1,12 +1,8 @@
 # DYNAMO Next.js Fix Pack
 
-This fixes the "Couldn't find any pages or app directory" error.
+Extract these files into the root of your DYNAMO project so the `app/` folder sits beside `package.json`.
 
-Copy these files into the root of your DYNAMO project, then run:
+Then run:
 
 npm install
-npm run dev
-
-Finally test:
-
 npm run build
