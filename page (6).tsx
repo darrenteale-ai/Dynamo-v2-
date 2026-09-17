@@ -1,2 +1,16 @@
-const shifts=[["PUM101","Luton","10:00–22:00","Paramedic + ECA","LIVE"],["PUM102","Stevenage","10:00–22:00","Paramedic + ECA","LIVE"],["PUM104","Luton","19:00–05:00","Paramedic + ECA","PLANNED"],["PUM105","Stevenage","19:00–05:00","Paramedic + ECA","PLANNED"]];
-export default function DashboardPage(){return <section className="content"><h1 className="page-title">Operations Dashboard</h1><p className="muted">Live operational overview for Medical Emergency Solutions.</p><div className="grid grid-4" style={{marginTop:22}}>{[["Active crews","5","green"],["Open incidents","3","amber"],["EEAST KPI","96.4%","green"],["Vehicles available","8","green"]].map(([l,v,t])=><div className="card" key={l}><div className="muted">{l}</div><div className="metric">{v}</div><span className={`badge ${t}`}>Operational</span></div>)}</div><div className="grid grid-2" style={{marginTop:16}}><div className="card"><div className="card-title">Today's EEAST Lines</div><table className="table"><thead><tr><th>Call sign</th><th>Area</th><th>Shift</th><th>Crew</th><th>Status</th></tr></thead><tbody>{shifts.map(r=><tr key={r[0]}>{r.map((c,i)=><td key={i}>{i===4?<span className={`badge ${c==="LIVE"?"green":"amber"}`}>{c}</span>:c}</td>)}</tr>)}</tbody></table></div><div className="card"><div className="card-title">Governance Actions</div><table className="table"><tbody><tr><td>Incident INC-2026-0184</td><td><span className="badge amber">Action required</span></td></tr><tr><td>Policy acknowledgement</td><td><span className="badge amber">7 outstanding</span></td></tr><tr><td>Fleet defects</td><td><span className="badge red">2 open</span></td></tr><tr><td>Training compliance</td><td><span className="badge green">94%</span></td></tr></tbody></table></div></div></section>}
+export default function Page() {
+  const cards = ['Open cases', 'Actions due', 'Reviews', 'Governance'];
+  return (
+    <section className="content">
+      <h1 className="page-title">Safeguarding</h1>
+      <p className="muted">Safeguarding referrals, case management, actions and governance oversight.</p>
+      <div className="grid grid-4" style={{marginTop:22}}>
+        {cards.map((card) => <div className="card" key={card}><div className="muted">{card}</div><div className="metric">—</div><span className="badge green">Module ready</span></div>)}
+      </div>
+      <div className="card" style={{marginTop:16}}>
+        <div className="card-title">Operational work queue</div>
+        <table className="table"><thead><tr><th>Area</th><th>Status</th><th>Next step</th></tr></thead><tbody><tr><td>Open cases</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Actions due</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Reviews</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Governance</td><td><span className="badge green">Active</span></td><td>Review required</td></tr></tbody></table>
+      </div>
+    </section>
+  );
+}

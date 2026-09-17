@@ -1,1 +1,2 @@
-export default function Page(){return <section className="content"><h1 className="page-title">Controlled Drugs</h1><p className="muted">DYNAMO module foundation. The database, workflows and permissions will be connected in the next implementation stage.</p><div className="card" style={{marginTop:20}}><div className="card-title">Module status</div><span className="badge amber">Build in progress</span></div></section>}
+import { redirect } from "next/navigation";
+export default function Home(){redirect("/dashboard")}

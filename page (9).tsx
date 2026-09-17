@@ -1,4 +1,16 @@
-"use client";
-import {useState} from "react";
-const policies=[{id:"POL-001",title:"Safeguarding Policy",version:"1.0",review:"Due",ack:false},{id:"POL-002",title:"Incident Reporting Policy",version:"2.1",review:"Current",ack:true},{id:"POL-003",title:"Vehicle Safety Policy",version:"1.4",review:"Current",ack:true}];
-export default function Policies(){const [items,setItems]=useState(policies);function ack(id:string){setItems(x=>x.map(p=>p.id===id?{...p,ack:true}:p))}return <section className="content"><h1 className="page-title">Policy Centre</h1><p className="muted">Controlled policies, versions and staff acknowledgements.</p><div className="card" style={{marginTop:20}}><table className="table"><thead><tr><th>Reference</th><th>Policy</th><th>Version</th><th>Review</th><th>Acknowledgement</th></tr></thead><tbody>{items.map(p=><tr key={p.id}><td>{p.id}</td><td>{p.title}</td><td>{p.version}</td><td><span className={`badge ${p.review==="Current"?"green":"amber"}`}>{p.review}</span></td><td>{p.ack?<span className="badge green">Acknowledged</span>:<button onClick={()=>ack(p.id)} style={{padding:"6px 9px"}}>Acknowledge</button>}</td></tr>)}</tbody></table></div></section>}
+export default function Page() {
+  const cards = ['Active staff', 'Compliance due', 'Competencies', 'Documents'];
+  return (
+    <section className="content">
+      <h1 className="page-title">Staff Management</h1>
+      <p className="muted">Staff directory, compliance, competencies and employment records.</p>
+      <div className="grid grid-4" style={{marginTop:22}}>
+        {cards.map((card) => <div className="card" key={card}><div className="muted">{card}</div><div className="metric">—</div><span className="badge green">Module ready</span></div>)}
+      </div>
+      <div className="card" style={{marginTop:16}}>
+        <div className="card-title">Operational work queue</div>
+        <table className="table"><thead><tr><th>Area</th><th>Status</th><th>Next step</th></tr></thead><tbody><tr><td>Active staff</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Compliance due</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Competencies</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Documents</td><td><span className="badge green">Active</span></td><td>Review required</td></tr></tbody></table>
+      </div>
+    </section>
+  );
+}
