@@ -1,16 +1,4 @@
-export default function Page() {
-  const cards = ["Today's shifts", 'Unfilled positions', 'Leave / availability', 'Shift changes'];
-  return (
-    <section className="content">
-      <h1 className="page-title">Rota & Crew Planning</h1>
-      <p className="muted">Manage operational shifts, crew assignments, availability and cover.</p>
-      <div className="grid grid-4" style={{marginTop:22}}>
-        {cards.map((card) => <div className="card" key={card}><div className="muted">{card}</div><div className="metric">—</div><span className="badge green">Module ready</span></div>)}
-      </div>
-      <div className="card" style={{marginTop:16}}>
-        <div className="card-title">Operational work queue</div>
-        <table className="table"><thead><tr><th>Area</th><th>Status</th><th>Next step</th></tr></thead><tbody><tr><td>Today's shifts</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Unfilled positions</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Leave / availability</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Shift changes</td><td><span className="badge green">Active</span></td><td>Review required</td></tr></tbody></table>
-      </div>
-    </section>
-  );
-}
+"use client";
+import {useState} from "react";
+const data=[{id:"MES-001",name:"Staff member",role:"Paramedic",active:true,compliance:"Compliant"},{id:"MES-002",name:"Staff member",role:"ECA",active:true,compliance:"Review due"},{id:"MES-003",name:"Staff member",role:"Technician",active:true,compliance:"Compliant"}];
+export default function Staff(){const [q,setQ]=useState("");return <section className="content"><h1 className="page-title">Staff Directory</h1><p className="muted">Central staff record and compliance overview.</p><div className="card" style={{marginTop:20}}><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search staff" style={{padding:10,border:"1px solid #dbe3ec",borderRadius:6,width:300,marginBottom:15}}/><table className="table"><thead><tr><th>Employee</th><th>Role</th><th>Status</th><th>Compliance</th></tr></thead><tbody>{data.filter(x=>(x.id+x.name+x.role).toLowerCase().includes(q.toLowerCase())).map(x=><tr key={x.id}><td>{x.id}</td><td>{x.role}</td><td><span className="badge green">Active</span></td><td><span className={`badge ${x.compliance==="Compliant"?"green":"amber"}`}>{x.compliance}</span></td></tr>)}</tbody></table></div></section>}

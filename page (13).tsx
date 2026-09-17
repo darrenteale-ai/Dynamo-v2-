@@ -1,16 +1,3 @@
-export default function Page() {
-  const cards = ['Bookings', 'Live transfers', 'Completed transfers', 'Exceptions'];
-  return (
-    <section className="content">
-      <h1 className="page-title">Hospital Transfers</h1>
-      <p className="muted">Transfer bookings, crew allocation, patient movement and documentation.</p>
-      <div className="grid grid-4" style={{marginTop:22}}>
-        {cards.map((card) => <div className="card" key={card}><div className="muted">{card}</div><div className="metric">—</div><span className="badge green">Module ready</span></div>)}
-      </div>
-      <div className="card" style={{marginTop:16}}>
-        <div className="card-title">Operational work queue</div>
-        <table className="table"><thead><tr><th>Area</th><th>Status</th><th>Next step</th></tr></thead><tbody><tr><td>Bookings</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Live transfers</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Completed transfers</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Exceptions</td><td><span className="badge green">Active</span></td><td>Review required</td></tr></tbody></table>
-      </div>
-    </section>
-  );
-}
+"use client";
+import {useState} from "react";
+export default function Incidents(){const [submitted,setSubmitted]=useState(false);return <section className="content"><h1 className="page-title">Incident Reporting</h1><p className="muted">Record, investigate and track operational and clinical incidents.</p><div className="grid grid-2" style={{marginTop:20}}><div className="card"><div className="card-title">New incident</div><form onSubmit={e=>{e.preventDefault();setSubmitted(true)}} style={{display:"grid",gap:12}}><input required placeholder="Incident title" style={{padding:10,border:"1px solid #dbe3ec",borderRadius:6}}/><select style={{padding:10,border:"1px solid #dbe3ec",borderRadius:6}}><option>Clinical</option><option>Operational</option><option>Vehicle</option><option>Safeguarding</option><option>Staffing</option></select><input placeholder="CAD / reference number" style={{padding:10,border:"1px solid #dbe3ec",borderRadius:6}}/><textarea required placeholder="Describe what happened" rows={6} style={{padding:10,border:"1px solid #dbe3ec",borderRadius:6}}/><button style={{padding:11,background:"#005eb8",color:"white",border:0,borderRadius:6}}>Submit incident</button>{submitted&&<span className="badge green">Incident recorded — investigation workflow ready</span>}</form></div><div className="card"><div className="card-title">Open investigations</div><table className="table"><tbody><tr><td>INC-2026-0184</td><td><span className="badge amber">Action required</span></td></tr><tr><td>INC-2026-0183</td><td><span className="badge amber">Under investigation</span></td></tr><tr><td>INC-2026-0181</td><td><span className="badge red">Open</span></td></tr></tbody></table></div></div></section>}

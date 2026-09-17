@@ -1,16 +1,1 @@
-export default function Page() {
-  const cards = ['Current stock', 'Checks due', 'Exceptions', 'Audit trail'];
-  return (
-    <section className="content">
-      <h1 className="page-title">Controlled Drugs</h1>
-      <p className="muted">Controlled-drug register, stock checks, reconciliation and audit workflow.</p>
-      <div className="grid grid-4" style={{marginTop:22}}>
-        {cards.map((card) => <div className="card" key={card}><div className="muted">{card}</div><div className="metric">—</div><span className="badge green">Module ready</span></div>)}
-      </div>
-      <div className="card" style={{marginTop:16}}>
-        <div className="card-title">Operational work queue</div>
-        <table className="table"><thead><tr><th>Area</th><th>Status</th><th>Next step</th></tr></thead><tbody><tr><td>Current stock</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Checks due</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Exceptions</td><td><span className="badge green">Active</span></td><td>Review required</td></tr><tr><td>Audit trail</td><td><span className="badge green">Active</span></td><td>Review required</td></tr></tbody></table>
-      </div>
-    </section>
-  );
-}
+export default function Reports(){return <section className="content"><h1 className="page-title">Reports & Analytics</h1><p className="muted">Management reporting workspace.</p><div className="grid grid-2" style={{marginTop:20}}>{["EEAST KPI report","Rota coverage","Incident analysis","Staff compliance","Fleet report","Governance actions"].map(x=><div className="card" key={x}><div className="card-title">{x}</div><p className="muted">Report generation will use live MES records and configurable reporting periods.</p><button style={{padding:"8px 12px"}}>Open report</button></div>)}</div></section>}
